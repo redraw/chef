@@ -1,28 +1,46 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+
+    <v-toolbar
+      app
+      :clipped-left="clipped"
+    >
+      <v-toolbar-title v-text="title"></v-toolbar-title>
+    </v-toolbar>
+
+    <v-content>
+      <ImageBuilder/>
+    </v-content>
+
+    <v-footer :fixed="fixed" app>
+      <span>&copy; 2017</span>
+    </v-footer>
+
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ImageBuilder from './components/ImageBuilder'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    HelloWorld
+    ImageBuilder
+  },
+  data () {
+    return {
+      clipped: false,
+      drawer: false,
+      fixed: false,
+      items: [{
+        icon: 'bubble_chart',
+        title: 'Inspire'
+      }],
+      miniVariant: false,
+      right: false,
+      rightDrawer: false,
+      title: 'Chef ImageBuilder 0.11'
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
