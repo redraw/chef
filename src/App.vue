@@ -5,9 +5,11 @@
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
+        <v-btn flat>{{ $t('hello') }}</v-btn>
         <v-btn flat>
           <v-select
-          :items="languages"
+          v-model="$i18n.locale"
+          :items="langs"
           label="English"
           ></v-select>
         </v-btn>
@@ -34,14 +36,10 @@ export default {
   },
   data () {
     return {
-      languages: ['Spanish', 'English'],
+      langs: ['en', 'jp'],
       clipped: false,
       drawer: false,
       fixed: false,
-      items: [{
-        icon: 'bubble_chart',
-        title: 'Inspire'
-      }],
       miniVariant: false,
       right: false,
       rightDrawer: false,
