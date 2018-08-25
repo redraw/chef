@@ -1,16 +1,16 @@
 <template>
-  <v-app>
+  <v-app dark>
 
     <v-toolbar app :clipped-left="clipped">
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn flat>Link One</v-btn>
-        <v-btn flat>Link Two</v-btn>
+        <v-btn flat>
           <v-select
-          :items="items"
-          label="Outline style"
-        ></v-select>
+          :items="languages"
+          label="English"
+          ></v-select>
+        </v-btn>
       </v-toolbar-items>
     </v-toolbar>
 
@@ -34,7 +34,7 @@ export default {
   },
   data () {
     return {
-      items: ['Spanish', 'English'],
+      languages: ['Spanish', 'English'],
       clipped: false,
       drawer: false,
       fixed: false,

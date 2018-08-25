@@ -1,24 +1,21 @@
 <template>
-  <v-container fluid fill-height>
-    <v-slide-y-transition mode="out-in">
-      <v-layout column align-center>
-        <img src="@/assets/logo.png" alt="Vuetify.js" class="mb-5">
-        <blockquote>
-          &#8220;First, solve the problem. Then, write the code.&#8221;
-          <footer>
-            <small>
-              <em>&mdash;John Johnson</em>
-            </small>
-          </footer>
-        </blockquote>
-      </v-layout>
-    </v-slide-y-transition>
+  <v-container>
+    <v-layout align-center justify-start column fill-height>
+      <v-form v-model="valid">
+        <distribution />
+      </v-form>
+    </v-layout>
   </v-container>
 </template>
 
 <script>
+import Distribution from '@/components/Distribution'
+
 export default {
   name: 'Chef',
+  components: {
+    Distribution
+  },
   props: {
     msg: String
   }
