@@ -1,34 +1,40 @@
 <template>
   <v-app>
 
-    <v-toolbar
-      app
-      :clipped-left="clipped"
-    >
+    <v-toolbar app :clipped-left="clipped">
       <v-toolbar-title v-text="title"></v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items>
+        <v-btn flat>Link One</v-btn>
+        <v-btn flat>Link Two</v-btn>
+          <v-select
+          :items="items"
+          label="Outline style"
+        ></v-select>
+      </v-toolbar-items>
     </v-toolbar>
 
     <v-content>
-      <ImageBuilder/>
+      <Chef/>
     </v-content>
 
     <v-footer :fixed="fixed" app>
-      <span>&copy; 2017</span>
     </v-footer>
 
   </v-app>
 </template>
 
 <script>
-import ImageBuilder from './components/ImageBuilder'
+import Chef from './components/Chef'
 
 export default {
   name: 'App',
   components: {
-    ImageBuilder
+    Chef
   },
   data () {
     return {
+      items: ['Spanish', 'English'],
       clipped: false,
       drawer: false,
       fixed: false,

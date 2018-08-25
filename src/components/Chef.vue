@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Chef',
   props: {
     msg: String
   }
