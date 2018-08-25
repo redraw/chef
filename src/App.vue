@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app>
 
     <v-toolbar app :clipped-left="clipped">
       <v-toolbar-title v-text="title"></v-toolbar-title>
